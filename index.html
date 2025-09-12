@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bpost Map Demo</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+
+  <body>
+    <!-- TODO: replace selects with Figma UI -->
+    <label for="activeStory">Active Story:</label>
+    <select id="activeStory" name="activeStory">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+
+    <label for="activeStep">Active Step:</label>
+    <select id="activeStep" name="activeStep">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+
+    <canvas id="riveCanvas"></canvas>
+
+    <script src="https://unpkg.com/@rive-app/canvas@latest"></script>
+    <script src="js/rive.js"></script>
+  </body>
+</html>
