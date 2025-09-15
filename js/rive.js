@@ -22,13 +22,12 @@ r = new rive.Rive({
   },
 });
 
+// Listens to events from Rive when user clicks on map areas, or resets map
 function onRiveEventReceived(riveEvent) {
   const eventData = riveEvent.data;
   const props = eventData.properties || {};
 
   if (eventData.type === rive.RiveEventType.General) {
-    console.log("General event fired:", eventData.name, props);
-
     if (eventData.name === "reset") {
       console.log("Reset event triggered from Rive");
       resetValues();
@@ -39,9 +38,6 @@ function onRiveEventReceived(riveEvent) {
     if (eventData.name === "triggerLocker") {
       console.log("Locker event triggered from Rive");
     }
-  } else if (eventData.type === rive.RiveEventType.OpenUrl) {
-    console.log("OpenUrl event fired:", eventData.name, eventData.url);
-    window.open(eventData.url);
   }
 }
 
@@ -51,7 +47,7 @@ window.addEventListener("resize", () => {
   r.resizeDrawingSurfaceToCanvas();
 });
 
-// Triggers map reset animation in Rive
+// Activate reseting state and reset all values
 document.getElementById("resetMapBtn").addEventListener("click", () => {
   isReseting.value = true;
   story.value = 0;
@@ -60,7 +56,7 @@ document.getElementById("resetMapBtn").addEventListener("click", () => {
   activeLocker.value = false;
 });
 
-// Resets all values after reset animation is done
+// Deactivate reseting state after animation is done
 resetValues = () => {
   isReseting.value = false;
 };
