@@ -53,7 +53,7 @@ r = new rive.Rive({
 // Listens to events from Rive when user clicks on map areas, or resets map
 function onRiveEventReceived(riveEvent) {
   const eventData = riveEvent.data;
-  const props = eventData.properties || {};
+  // const props = eventData.properties || {};
 
   if (eventData.type === rive.RiveEventType.General) {
     if (eventData.name === "reset") {
