@@ -53,48 +53,51 @@ r = new rive.Rive({
 // Listens to events from Rive when user clicks on map areas, or resets map
 function onRiveEventReceived(riveEvent) {
   const eventData = riveEvent.data;
-  // const props = eventData.properties || {};
 
   if (eventData.type === rive.RiveEventType.General) {
     if (eventData.name === "reset") {
       console.log("Reset event triggered from Rive");
       resetValues();
+    } else {
+      isActive.value = true; // Stops hover animations when a story is active
     }
-    if (eventData.name === "triggerATM") {
-      console.log("ATM event triggered from Rive");
-    }
-    if (eventData.name === "triggerLocker") {
-      console.log("Locker event triggered from Rive");
-    }
-    if (eventData.name === "triggerEntrance") {
-      console.log("Entrance event triggered from Rive");
-    }
-    if (eventData.name === "triggerArea2") {
-      console.log("Area2 event triggered from Rive");
-    }
-    if (eventData.name === "triggerStorage") {
-      console.log("Storage event triggered from Rive");
-    }
-    if (eventData.name === "triggerArea1") {
-      console.log("Area1 event triggered from Rive");
-    }
-    if (eventData.name === "triggerOpenDesk") {
-      console.log("OpenDesk event triggered from Rive");
-    }
-    if (eventData.name === "triggerGlassOffice") {
-      console.log("GlassOffice event triggered from Rive");
-    }
-    if (eventData.name === "triggerBoxing") {
-      console.log("Boxing event triggered from Rive");
-    }
-    if (eventData.name === "triggerSofa") {
-      console.log("Sofa event triggered from Rive");
-    }
-    if (eventData.name === "triggerLeaflet") {
-      console.log("Leaflet event triggered from Rive");
-    }
-    if (eventData.name === "triggerScreen") {
-      console.log("Screen event triggered from Rive");
+    switch (eventData.name) {
+      case "triggerATM":
+        console.log("ATM event triggered from Rive");
+        break;
+      case "triggerLocker":
+        console.log("Locker event triggered from Rive");
+        break;
+      case "triggerEntrance":
+        console.log("Entrance event triggered from Rive");
+        break;
+      case "triggerArea2":
+        console.log("Area2 event triggered from Rive");
+        break;
+      case "triggerStorage":
+        console.log("Storage event triggered from Rive");
+        break;
+      case "triggerArea1":
+        console.log("Area1 event triggered from Rive");
+        break;
+      case "triggerOpenDesk":
+        console.log("OpenDesk event triggered from Rive");
+        break;
+      case "triggerGlassOffice":
+        console.log("GlassOffice event triggered from Rive");
+        break;
+      case "triggerBoxing":
+        console.log("Boxing event triggered from Rive");
+        break;
+      case "triggerSofa":
+        console.log("Sofa event triggered from Rive");
+        break;
+      case "triggerLeaflet":
+        console.log("Leaflet event triggered from Rive");
+        break;
+      case "triggerScreen":
+        console.log("Screen event triggered from Rive");
+        break;
     }
   }
 }
