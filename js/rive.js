@@ -19,7 +19,7 @@ let activeStory = 0; // default 0 shows map overview (no story active)
 let activeStep = 1; // default 1 shows first step when a story is active
 
 r = new rive.Rive({
-  src: "assets/bpost_map_250922.riv",
+  src: "assets/bpost_map_250930.riv",
   canvas: riveCanvas,
   layout: new rive.Layout({ fit: rive.Fit.Cover }),
   stateMachines: ["State Machine 1"],
