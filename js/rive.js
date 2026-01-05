@@ -17,9 +17,10 @@ let r,
   activeScreen;
 let activeStory = 0; // default 0 shows map overview (no story active)
 let activeStep = 1; // default 1 shows first step when a story is active
+let isHoldingMobile = true; // default true, characters are holding mobile devices
 
 r = new rive.Rive({
-  src: "assets/bpost_map_251003.riv",
+  src: "assets/bpost_map_260105.riv",
   canvas: riveCanvas,
   layout: new rive.Layout({ fit: rive.Fit.Cover }),
   stateMachines: ["State Machine 1"],
@@ -31,6 +32,9 @@ r = new rive.Rive({
     window.riveInputs = r.stateMachineInputs("State Machine 1");
     isReseting = window.riveInputs.find((i) => i.name === "isReseting");
     isActive = window.riveInputs.find((i) => i.name === "isActive");
+    isHoldingMobile = window.riveInputs.find(
+      (i) => i.name === "isHoldingMobile"
+    );
     story = window.riveInputs.find((i) => i.name === "activeStory");
     step = window.riveInputs.find((i) => i.name === "activeStep");
     activeATM = window.riveInputs.find((i) => i.name === "activeATM");
