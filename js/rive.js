@@ -20,7 +20,7 @@ let activeStep = 1; // default 1 shows first step when a story is active
 let isHoldingMobile = true; // default true, characters are holding mobile devices
 
 r = new rive.Rive({
-  src: "assets/bpost_map_260105.riv",
+  src: "assets/bpost_map_260107.riv",
   canvas: riveCanvas,
   layout: new rive.Layout({ fit: rive.Fit.Cover }),
   stateMachines: ["State Machine 1"],
