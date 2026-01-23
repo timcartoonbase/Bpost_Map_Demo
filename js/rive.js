@@ -20,7 +20,7 @@ let activeStep = 1; // default 1 shows first step when a story is active
 let isHoldingMobile = true; // default true, characters are holding mobile devices
 
 r = new rive.Rive({
-  src: "assets/bpost_map_260108.riv",
+  src: "assets/bpost_map_260123.riv",
   canvas: riveCanvas,
   layout: new rive.Layout({ fit: rive.Fit.Cover }),
   stateMachines: ["State Machine 1"],
@@ -33,7 +33,7 @@ r = new rive.Rive({
     isReseting = window.riveInputs.find((i) => i.name === "isReseting");
     isActive = window.riveInputs.find((i) => i.name === "isActive");
     isHoldingMobile = window.riveInputs.find(
-      (i) => i.name === "isHoldingMobile"
+      (i) => i.name === "isHoldingMobile",
     );
     story = window.riveInputs.find((i) => i.name === "activeStory");
     step = window.riveInputs.find((i) => i.name === "activeStep");
@@ -45,7 +45,7 @@ r = new rive.Rive({
     activeArea1 = window.riveInputs.find((i) => i.name === "activeArea1");
     activeOpenDesk = window.riveInputs.find((i) => i.name === "activeOpenDesk");
     activeGlassOffice = window.riveInputs.find(
-      (i) => i.name === "activeGlassOffice"
+      (i) => i.name === "activeGlassOffice",
     );
     activeBoxing = window.riveInputs.find((i) => i.name === "activeBoxing");
     activeSofa = window.riveInputs.find((i) => i.name === "activeSofa");
